@@ -1,3 +1,4 @@
-.del{
-    max-width: 30px;
+.strike {
+  text-decoration: line-through;
+  color: rgba(65, 232, 68, 0.72);
 }

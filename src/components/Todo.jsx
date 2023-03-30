@@ -24,7 +24,7 @@ function Todo() {
     <div className='container'>
       <div className='text-center m-4'>Todos:</div>
       {loading ? (
-        <div className='w-full h-screen absolute top-0 left-0 overflow-hidden bg-slate-900 flex flex-col justify-center text-center'>
+        <div className='text-center'>
           <span className='loading'>loading...</span>
         </div>
       ) : (
@@ -32,17 +32,16 @@ function Todo() {
           {data.map((item, index) => {
             return (
               <li
-                className='list-group-item d-flex aligin-item-center justify-content-between'
+                className='list-group-item d-flex aligin-item-center justify-content-between '
                 key={index}
               >
-                {item.title}
-                <div
+                <span
                   className={
-                    item.completed
-                      ? "cursor-pointer line-through text-green-500"
-                      : "cursor-pointer"
+                    item.completed !== true ? "item-text strike" : "item-text"
                   }
-                ></div>
+                >
+                  {item.title}
+                </span>
                 <button
                   className='btn btn-outline-danger'
                   onClick={() => del(item.id)}
